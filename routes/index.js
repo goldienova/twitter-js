@@ -18,5 +18,11 @@ router.get('/stylesheets/style.css', function(req, res, next){
 });
 
 
+router.get( '/users/:name', function (req, res) {
+  let tweetsByUser = tweetBank.find({name: req.params.name});
+  res.render( 'index', { tweets: tweetsByUser})
+});
+
+
 
 module.exports = router;
