@@ -7,6 +7,7 @@ var app = express();
 
 const routes = require('./routes/');
 app.use('/', routes);
+//app.use('/', express.static('/routes'));
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
