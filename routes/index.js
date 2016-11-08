@@ -23,6 +23,10 @@ router.get( '/users/:name', function (req, res) {
   res.render( 'index', { tweets: tweetsByUser})
 });
 
-
+router.get( '/tweets/:id', function (req, res) {
+  let tweetID = tweetBank.find({id: req.params.id});
+  console.log(req.params.id, tweetID);
+  res.render( 'index', { tweets: tweetID})
+});
 
 module.exports = router;
